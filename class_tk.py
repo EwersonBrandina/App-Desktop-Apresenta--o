@@ -449,77 +449,86 @@ def chama_media():
     fr5_lab17['text']=cotar.et3
 
 def escolha_guardar():
-    cod = 0
-    nome_atk = user     
-    nome_moeda = str(fr5_in1.get())
-    capital = float(fr5_in2.get())
-    meses = int(fr5_in3.get())
-    if nome_moeda == 'DOLAR' or nome_moeda == 'DÓLAR':
-        #print('1')
-        cotar.dolar2(meses)
-        montante = cotar.md + capital
-        cadastrar.cadastro_movimentacao(cod, nome_atk, nome_moeda, capital, meses, montante)
-        fr5_lab7['text']=montante
-    if nome_moeda == 'EURO':
-        #print('2')
-        cotar.euro2(meses)
-        montante = cotar.me + capital
-        cadastrar.cadastro_movimentacao(cod, nome_atk, nome_moeda, capital, meses, montante)
-        fr5_lab7['text']=montante
-    if nome_moeda == 'LIBRA':
-        #print('3')
-        cotar.libra2(meses)
-        montante = cotar.ml + capital
-        cadastrar.cadastro_movimentacao(cod, nome_atk, nome_moeda, capital, meses, montante)
-        fr5_lab7['text']=montante
-    if nome_moeda == 'BITCOIN':
-        #print('4')
-        cotar.bitcoin2(meses)
-        montante = cotar.mb + capital
-        cadastrar.cadastro_movimentacao(cod, nome_atk, nome_moeda, capital, meses, montante)
-        fr5_lab7['text']=montante
-    if nome_moeda == 'ETHEREUM':
-        #print('5')
-        cotar.ethereum2(meses)
-        montante = cotar.met + capital
-        cadastrar.cadastro_movimentacao(cod, nome_atk, nome_moeda, capital, meses, montante)
-        fr5_lab7['text']=montante
+    nome_moeda = (fr5_in1.get())
+    capital = (fr5_in2.get())
+    meses = (fr5_in3.get())
+    if nome_moeda != "" and capital != "" and meses != "":
+        print ("entrou guardar")
+        cod = 0
+        nome_atk = user     
+        nome_moeda = str(fr5_in1.get())
+        capital = float(fr5_in2.get())
+        meses = int(fr5_in3.get())
+        if nome_moeda == 'DOLAR' or nome_moeda == 'DÓLAR':
+            #print('1')
+            cotar.dolar2(meses)
+            montante = cotar.md + capital
+            cadastrar.cadastro_movimentacao(cod, nome_atk, nome_moeda, capital, meses, montante)
+            fr5_lab7['text']=montante
+        if nome_moeda == 'EURO':
+            #print('2')
+            cotar.euro2(meses)
+            montante = cotar.me + capital
+            cadastrar.cadastro_movimentacao(cod, nome_atk, nome_moeda, capital, meses, montante)
+            fr5_lab7['text']=montante
+        if nome_moeda == 'LIBRA':
+            #print('3')
+            cotar.libra2(meses)
+            montante = cotar.ml + capital
+            cadastrar.cadastro_movimentacao(cod, nome_atk, nome_moeda, capital, meses, montante)
+            fr5_lab7['text']=montante
+        if nome_moeda == 'BITCOIN':
+            #print('4')
+            cotar.bitcoin2(meses)
+            montante = cotar.mb + capital
+            cadastrar.cadastro_movimentacao(cod, nome_atk, nome_moeda, capital, meses, montante)
+            fr5_lab7['text']=montante
+        if nome_moeda == 'ETHEREUM':
+            #print('5')
+            cotar.ethereum2(meses)
+            montante = cotar.met + capital
+            cadastrar.cadastro_movimentacao(cod, nome_atk, nome_moeda, capital, meses, montante)
+            fr5_lab7['text']=montante
 
 def escolha_vender():
-    cod_n = 0
-    nome_atk_n = user     
-    nome_moeda_n = str(fr4_in1.get())
-    capital_n = float(fr4_in2.get())
-    if nome_moeda_n == 'DOLAR' or nome_moeda_n == 'DÓLAR':
-        #print('1')
-        cotar.dolar()
-        montante_n = float(capital_n)
-        cadastrar.cadastro_movimentacoes_n(cod_n, nome_atk_n, nome_moeda_n, capital_n, montante_n)
-        fr5_lab7['text']=montante_n
-    if nome_moeda_n == 'EURO':
-        #print('2')
-        cotar.euro()
-        montante_n = float(capital_n)
-        cadastrar.cadastro_movimentacoes_n(cod_n, nome_atk_n, nome_moeda_n, capital_n, montante_n)
-        fr5_lab7['text']=montante_n
-    if nome_moeda_n == 'LIBRA':
-        #print('3')
-        cotar.libra()
-        montante_n = float(capital_n)
-        cadastrar.cadastro_movimentacoes_n(cod_n, nome_atk_n, nome_moeda_n, capital_n, montante_n)
-        fr5_lab7['text']=montante_n
-    if nome_moeda_n == 'BITCOIN':
-        #print('4')
-        cotar.bitcoin()
-        montante_n = float(capital_n)
-        cadastrar.cadastro_movimentacoes_n(cod_n, nome_atk_n, nome_moeda_n, capital_n, montante_n)
-        fr5_lab7['text']=montante_n
-    if nome_moeda_n == 'ETHEREUM':
-        #print('5')
-        cotar.ethereum()
-        montante_n = float(capital_n)
-        cadastrar.cadastro_movimentacoes_n(cod_n, nome_atk_n, nome_moeda_n, capital_n, montante_n)
-        fr5_lab7['text']=montante_n
+    nome_moeda_n = (fr4_in1.get())
+    capital_n = (fr4_in2.get())
+    if nome_moeda_n != "" and capital_n != "":
+        print ("entrou vender")
+        cod_n = 0
+        nome_atk_n = user     
+        nome_moeda_n = str(fr4_in1.get())
+        capital_n = float(fr4_in2.get())
+        if (nome_moeda_n == 'DOLAR' or nome_moeda_n == 'DÓLAR'):
+            #print('1')
+            cotar.dolar()
+            montante_n = float(capital_n)
+            cadastrar.cadastro_movimentacoes_n(cod_n, nome_atk_n, nome_moeda_n, capital_n, montante_n)
+            fr5_lab7['text']=montante_n
+        if nome_moeda_n == 'EURO':
+            #print('2')
+            cotar.euro()
+            montante_n = float(capital_n)
+            cadastrar.cadastro_movimentacoes_n(cod_n, nome_atk_n, nome_moeda_n, capital_n, montante_n)
+            fr5_lab7['text']=montante_n
+        if nome_moeda_n == 'LIBRA':
+            #print('3')
+            cotar.libra()
+            montante_n = float(capital_n)
+            cadastrar.cadastro_movimentacoes_n(cod_n, nome_atk_n, nome_moeda_n, capital_n, montante_n)
+            fr5_lab7['text']=montante_n
+        if nome_moeda_n == 'BITCOIN':
+            #print('4')
+            cotar.bitcoin()
+            montante_n = float(capital_n)
+            cadastrar.cadastro_movimentacoes_n(cod_n, nome_atk_n, nome_moeda_n, capital_n, montante_n)
+            fr5_lab7['text']=montante_n
+        if nome_moeda_n == 'ETHEREUM':
+            #print('5')
+            cotar.ethereum()
+            montante_n = float(capital_n)
+            cadastrar.cadastro_movimentacoes_n(cod_n, nome_atk_n, nome_moeda_n, capital_n, montante_n)
+            fr5_lab7['text']=montante_n
 
 def mostrar_saldo():
     cadastrar.saldo_conta(user)

@@ -19,14 +19,14 @@ me=0
 n=0
 for i in cotacao:
     if len(str(i['bid']))==6:
-        print(i['bid'])
+#        print(i['bid'])
         n=n+1
         me=me+float(i['bid'])
-print(me/n)
+#print(me/n)
 
 requisicao = requests.get(f'https://economia.awesomeapi.com.br/json/daily/USD-BRL/90')
 cotacao = requisicao.json()
 d3=0
 for i in cotacao:
     d3 = d3+float(i['bid'])
-print(d3/len(cotacao))
+#print(d3/len(cotacao))
